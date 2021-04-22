@@ -18,6 +18,18 @@ def home():
 if __name__ == '__main__':
     app.run(debug=True)
 
+@app.route("/recco",methods=['POST','GET'])
+def recco():
+    return(render_template('recco.html'))
+
+@app.route("/info",methods=['POST','GET'])
+def info():
+    return(render_template('info.html'))
+
+@app.route('/playlist',methods=['POST','GET'])
+def playlist():
+    return render_template('results.html')
+
 @app.route("/results", methods=['POST', 'GET'])
 def result():
     if request.method == "GET":
