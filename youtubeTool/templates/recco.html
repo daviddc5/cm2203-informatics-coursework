@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-   
+
     <title>Youtube Recommender</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
@@ -43,8 +43,10 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
   </head>
+
   <body class="d-flex h-100 text-center text-white bg-dark">
- 
+  {% block content %}
+    <form method="POST">
 
 
 
@@ -65,12 +67,12 @@
 
     <h1>Youtube Recommender</h1>
     <p class="lead">Please enter the desired URL to start our machine learning process!</p>
-    <form>
+    <form method = "POST">
       <label>URL:</label>
-      <input type="url"></input>
+      <input type="url" "name"=search_videoLink></input>
     </form>
     <p class="lead">
-      <a href="{{ url_for('playlist')}}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Go!</a>
+      <button type="submit" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Go!</button>
     </p>
   </main>
 
@@ -82,6 +84,7 @@
 
 
 
-
+</form>
+{% endblock content %}
 
 </body></html>

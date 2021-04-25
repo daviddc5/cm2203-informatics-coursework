@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-   
+
     <title>Youtube Recommender</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
@@ -44,7 +44,8 @@
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
- 
+    {% block content %}
+      <form method="GET">
 
 
 
@@ -68,7 +69,7 @@
     <p class="lead"> Below you'll find a playlist selected by our powerful machine learning process. <br> Below is an exemplar playlist for the time being...</p>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLpC1Yw_g-KEUXWWVoLpzTZjKjaSLPwAHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
+
   </main>
 
   <footer class="mt-auto text-white-50" id="foot">
@@ -80,5 +81,6 @@
 
 
 
-
+</form>
+{% endblock content %}
 </body></html>

@@ -9,33 +9,29 @@ youtube_API = build('youtube', 'v3', developerKey = youtube_API_KEY)
 @app.route("/", methods=['POST', 'GET'])
 @app.route("/home", methods=['POST', 'GET'])
 def home():
-    if request.method == "POST":
-        video_url = request.form['']
-        return redirect(url_for('result', video_id = input_button))
-    else:
-        return render_template('home.html')
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
 
 @app.route("/recco",methods=['POST','GET'])
 def recco():
-    return(render_template('recco.html'))
+    if request.method == "POST":
+        video_url = request.form['search_videoLink']
+        return redirect(url_for('results.html', link = video_url))
+    else:
+        return(render_template('recco.html'))
 
 @app.route("/info",methods=['POST','GET'])
 def info():
     return(render_template('info.html'))
 
-@app.route('/playlist',methods=['POST','GET'])
-def playlist():
-    return render_template('results.html')
-
 @app.route("/results", methods=['POST', 'GET'])
 def result():
     if request.method == "GET":
-        video_id = request.args['video_id']
-        results = get_video_info(video_id)
-        return render_template("result.html", title='Result', result=result)
+        link = request.args.get['link']
+        results = get_video_info(link)
+        return render_template("results.html", title='Results', results=results)
     else:
         return render_template('home.html')
 
