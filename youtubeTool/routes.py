@@ -18,7 +18,7 @@ if __name__ == '__main__':
 def recco():
     if request.method == "POST":
         video_url = request.form['search_videoLink']
-        return redirect(url_for('results.html', link = video_url))
+        return redirect(url_for('results', link = video_url))
     else:
         return(render_template('recco.html'))
 
@@ -27,9 +27,9 @@ def info():
     return(render_template('info.html'))
 
 @app.route("/results", methods=['POST', 'GET'])
-def result():
+def results():
     if request.method == "GET":
-        link = request.args.get['link']
+        link = request.args['link']
         results = get_video_info(link)
         return render_template("results.html", title='Results', results=results)
     else:
@@ -43,9 +43,9 @@ def get_video_info(video_link):
             video_ID = (video_link[(h+2):])
 
     request = youtube_API.videos().list(
-    part = 'statistics',
-    id = video_ID
-    )
+        part = 'statistics',
+        id = video_ID
+        )
 
     video_info = request.execute()
 
@@ -55,15 +55,15 @@ def get_video_info(video_link):
     commentCount = video_info["items"][0]["statistics"]["commentCount"]
 
     request_categoryInfo = youtube_API.videos().list (
-    part='snippet',
-    id=video_ID
-    )
+        part='snippet',
+        id=video_ID
+        )
 
     video_category_info = request_categoryInfo.execute()
 
-    CategoryID = result['items'][0]['snippet']['CategoryID']
-    Title = result['items'][0]['snippet']['title']
+    videoID = video_category_info['items'][0]['snippet']['categoryId']
+    Title = video_category_info['items'][0]['snippet']['title']
 
-    data = [Title, viewCount, likeCount, dislikeCount, commentCount, CategoryID]
+    data = [Title, viewCount, likeCount, dislikeCount, commentCount, videoID]
 
     return(data)
