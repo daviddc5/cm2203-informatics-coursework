@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   
+    <title>Youtube Recommender</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+ 
+
+
+
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div class="navbar">
+      <h3 class="float-md-start mb-0">Youtube Recommender</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="{{ url_for('home')}}">Home</a>
+        <a class="nav-link" href="{{ url_for('info')}}">Technical Info</a>
+        <a class="nav-link" href="{{ url_for('recco')}}">Recommender</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3" id="box">
+
+    <h1>Machine Readable output in JSON-LD and HTML</h1>
+    <br>
+    <br>
+    <h2>For "Lamborghini Aventador S Roadster vs McLaren 720S Spider - DRAG RACE, ROLLING RACE & BRAKE TEST"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Lamborghini Aventador S Roadster vs McLaren 720S Spider - DRAG RACE, ROLLING RACE & BRAKE TEST",
+      "description": "Video about cars.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "187995"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "5999"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "10917893"
+      }],
+      "commentCount": "7564"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">Lamborghini Aventador S Roadster vs McLaren 720S Spider - DRAG RACE, ROLLING RACE & BRAKE TEST</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about cars.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="187995" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="5999" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="10917893" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="7564">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <h2>For "FULL SPEED rc car assault!"</h2>
+     <br>
+     <br>
+     <h3>JSON-LD Output:</h3>
+     <!-- textarea { white-space: nowrap;<!--> 
+     <textarea rows="10" cols="150">
+      
+      <script type="application/ld+json">
+      {
+       "@context": "https://schema.org",
+       "@type": "VideoObject",
+       "name": "FULL SPEED rc car assault!",
+       "description": "Video about cars.",
+       "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+       "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+       "uploadDate": "2019-07-05T08:00:00+02:00",
+       "duration": "PT10M06S",
+       "interactionStatistic": [{
+       "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/LikeAction",
+         "userInteractionCount": "1378"
+       }
+       ,{
+       "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/DislikeAction",
+         "userInteractionCount": "28"
+       }
+       ,{
+       "@type": "InteractionCounter",
+       "interactionType": "https://schema.org/WatchAction",
+       "userInteractionCount": "14380"
+       }],
+       "commentCount": "351"
+     }
+     </script>
+      </textarea>
+ 
+     <h3>HTML Output:</h3>
+ 
+     <textarea rows="10" cols="150">
+      
+       <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+       <head>
+         <title itemprop="name">FULL SPEED rc car assault!</title>
+       </head>
+       <body>
+         <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+         <meta itemprop="duration" content="PT10M06S" />
+         <p itemprop="description">Video about cars.</p>
+         <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+           <meta itemprop="userInteractionCount" content="1378" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+           <meta itemprop="userInteractionCount" content="28" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+           <meta itemprop="userInteractionCount" content="14380" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+         </div>
+         <meta itemprop="commentCount" content="351">
+         <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+         <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+       </body>
+       </html>
+       
+      </textarea>
+
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+      <h2>For "Noob's Guide to Car Culture!"</h2>
+      <br>
+      <br>
+      <h3>JSON-LD Output:</h3>
+      <!-- textarea { white-space: nowrap;<!--> 
+      <textarea rows="10" cols="150">
+       
+       <script type="application/ld+json">
+       {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Noob's Guide to Car Culture!",
+        "description": "Video about cars.",
+        "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+        "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+        "uploadDate": "2019-07-05T08:00:00+02:00",
+        "duration": "PT10M06S",
+        "interactionStatistic": [{
+        "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/LikeAction",
+          "userInteractionCount": "33299"
+        }
+        ,{
+        "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/DislikeAction",
+          "userInteractionCount": "839"
+        }
+        ,{
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "1057854"
+        }],
+        "commentCount": "2503"
+      }
+      </script>
+       </textarea>
+  
+      <h3>HTML Output:</h3>
+  
+      <textarea rows="10" cols="150">
+       
+        <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+        <head>
+          <title itemprop="name">Noob's Guide to Car Culture!</title>
+        </head>
+        <body>
+          <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+          <meta itemprop="duration" content="PT10M06S" />
+          <p itemprop="description">Video about cars.</p>
+          <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+            <meta itemprop="userInteractionCount" content="33299" />
+            <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+            <meta itemprop="userInteractionCount" content="839" />
+            <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+            <meta itemprop="userInteractionCount" content="1057854" />
+            <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+          </div>
+          <meta itemprop="commentCount" content="2503">
+          <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+          <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+        </body>
+        </html>
+        
+       </textarea>
+    <br>
+    <br>  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>For "25 SCARY But True Space Facts"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "25 SCARY But True Space Facts",
+      "description": "Video about space.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "520"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "58"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "23111"
+      }],
+      "commentCount": "73"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">25 SCARY But True Space Facts</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about space.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="520" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="58" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="23111" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="73">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+
+    <br>
+    <br>  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>For "StoryBots Outer Space | Planets, Sun, Moon, Earth and Stars | Solar System Super Song | Fun Learning"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "StoryBots Outer Space | Planets, Sun, Moon, Earth and Stars | Solar System Super Song | Fun Learning",
+      "description": "Video about space.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "220144"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "49261"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "78336220"
+      }],
+      "commentCount": "489"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">StoryBots Outer Space | Planets, Sun, Moon, Earth and Stars | Solar System Super Song | Fun Learning</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about space.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="220144" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="49261" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="78336220" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="489">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "The 10 Biggest Lies about Space!"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "The 10 Biggest Lies about Space!",
+      "description": "Video about space.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "5365"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "315"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "221902"
+      }],
+      "commentCount": "685"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">The 10 Biggest Lies about Space!</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about space.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="5365" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="315" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="221902" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="685">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "10 Terrifying Facts About Space"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "10 Terrifying Facts About Space",
+      "description": "Video about space.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "25520"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "1022"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "1732395"
+      }],
+      "commentCount": "2982"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">10 Terrifying Facts About Space</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about space.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="25520" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1022" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1732395" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="2982">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "10 Space Photos That Will Give You Nightmares"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "10 Space Photos That Will Give You Nightmares",
+      "description": "Video about space.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "16924"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "1713"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "1916879"
+      }],
+      "commentCount": "1982"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">10 Space Photos That Will Give You Nightmares</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about space.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="16924" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1713" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1916879" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="1982">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "10 Creepiest Things Seen By Astronauts In Space."</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "10 Creepiest Things Seen By Astronauts In Space.",
+      "description": "Video about space.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "12338"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "1210"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "803746"
+      }],
+      "commentCount": "1168"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">10 Creepiest Things Seen By Astronauts In Space.</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about space.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="12338" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1210" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="803746" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="1168">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "Game Theory: Are Your Mobile Games ILLEGAL?"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Game Theory: Are Your Mobile Games ILLEGAL?",
+      "description": "Video about mobile games.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "206833"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "2920"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "4314097"
+      }],
+      "commentCount": "21901"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">Game Theory: Are Your Mobile Games ILLEGAL?</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about mobile games.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="206833" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="2920" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="4314097" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="21901">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "King Julien Warzone Moments"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "King Julien Warzone Moments",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "59601"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "513"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "1474159"
+      }],
+      "commentCount": "1133"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">King Julien Warzone Moments</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="59601" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="513" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1474159" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="1133">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "warm up games on ana are always the sweatiest w/ @bogur"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "warm up games on ana are always the sweatiest w/ @bogur",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "1256"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "2"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "23009"
+      }],
+      "commentCount": "63"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">warm up games on ana are always the sweatiest w/ @bogur</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="1256" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="2" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="23009" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="63">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "WHAT SHE DOIN ON THE CEILING?? | 3 Scary Games"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "WHAT SHE DOIN ON THE CEILING?? | 3 Scary Games",
+      "description": "Video about horror game.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "115769"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "828"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "1975242"
+      }],
+      "commentCount": "8762"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">WHAT SHE DOIN ON THE CEILING?? | 3 Scary Games</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about horror game.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="115769" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="828" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1975242" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="8762">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "Smash Bros Drinking Game! Ft. Michael Reeves"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Smash Bros Drinking Game! Ft. Michael Reeves",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "143963"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "1061"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "4544039"
+      }],
+      "commentCount": "6891"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">Smash Bros Drinking Game! Ft. Michael Reeves</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="143963" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1061" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="4544039" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="6891">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "SHOWER THOUGHTS"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "SHOWER THOUGHTS",
+      "description": "Video about reflection.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "173188"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "1206"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "5115618"
+      }],
+      "commentCount": "4829"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">SHOWER THOUGHTS</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about reflection.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="173188" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1206" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="5115618" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="4829">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "UNSTOPPABLE MORON MAKES NUCLEAR WASTELAND NOTICEABLY WORSE | Fallout: New Vegas"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "UNSTOPPABLE MORON MAKES NUCLEAR WASTELAND NOTICEABLY WORSE | Fallout: New Vegas",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "228033"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "2649"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "6191402"
+      }],
+      "commentCount": "19847"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">UNSTOPPABLE MORON MAKES NUCLEAR WASTELAND NOTICEABLY WORSE | Fallout: New Vegas</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="228033" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="2649" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="6191402" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="19847">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "Michael Reeves RUST Adventure | Animation"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Michael Reeves RUST Adventure | Animation",
+      "description": "Video about animation.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "28055"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "107"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "315311"
+      }],
+      "commentCount": "653"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">Michael Reeves RUST Adventure | Animation</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about animation.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="28055" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="107" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="315311" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="653">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "How much does Pewdiepie Make"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "How much does Pewdiepie Make",
+      "description": "Video about YouTuber.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "283795"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "1858"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "3315013"
+      }],
+      "commentCount": "23008"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">How much does Pewdiepie Make</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about YouTuber.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="283795" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1858" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="3315013" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="23008">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "THE RUBY PLAYBUTTON / YouTube 50 Mil Sub Reward Unbox"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "THE RUBY PLAYBUTTON / YouTube 50 Mil Sub Reward Unbox",
+      "description": "Video about unboxing.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "5813891"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "203253"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "85779788"
+      }],
+      "commentCount": "633053"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">THE RUBY PLAYBUTTON / YouTube 50 Mil Sub Reward Unbox</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about unboxing.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="5813891" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="203253" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="85779788" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="633053">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "When a Smash Player tries Dragon Ball FighterZ"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "When a Smash Player tries Dragon Ball FighterZ",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "8158"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "41"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "109897"
+      }],
+      "commentCount": "1133"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">When a Smash Player tries Dragon Ball FighterZ</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="8158" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="41" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="109897" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="1133">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "DBFZ - Lobby ShenaniganZ 4"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "DBFZ - Lobby ShenaniganZ 4",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "92243"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "520"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "1659759"
+      }],
+      "commentCount": "5900"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">DBFZ - Lobby ShenaniganZ 4</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="92243" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="520" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1659759" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="5900">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "Rainbow Hacks and Crafts! / 11 Cool Girly and Beauty Hacks"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Rainbow Hacks and Crafts! / 11 Cool Girly and Beauty Hacks",
+      "description": "Video about tips and crafts.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "10905"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "925"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "1131920"
+      }],
+      "commentCount": "534"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">Rainbow Hacks and Crafts! / 11 Cool Girly and Beauty Hacks</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about tips and crafts.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="10905" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="925" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="1131920" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="534">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "7 COOL GIRLY HACKS || DIY, Hacks and Craft Projects for Girls"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "7 COOL GIRLY HACKS || DIY, Hacks and Craft Projects for Girls",
+      "description": "Video about tips and crafts.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "172071"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "19577"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "30772288"
+      }],
+      "commentCount": "11699"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">7 COOL GIRLY HACKS || DIY, Hacks and Craft Projects for Girls</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about tips and crafts.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="172071" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="19577" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="30772288" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="11699">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "11 Cool Girly Hacks / DIY, Hacks and Craft Projects for Girls"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "11 Cool Girly Hacks / DIY, Hacks and Craft Projects for Girls",
+      "description": "Video about tips and crafts.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "81933"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "10394"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "9878961"
+      }],
+      "commentCount": "3107"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">11 Cool Girly Hacks / DIY, Hacks and Craft Projects for Girls</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about tips and crafts.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="81933" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="10394" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="9878961" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="3107">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <h2>For "nerf baby vegeta pls"</h2>
+     <br>
+     <br>
+     <h3>JSON-LD Output:</h3>
+     <!-- textarea { white-space: nowrap;<!--> 
+     <textarea rows="10" cols="150">
+      
+      <script type="application/ld+json">
+      {
+       "@context": "https://schema.org",
+       "@type": "VideoObject",
+       "name": "nerf baby vegeta pls",
+       "description": "Video about videogame.",
+       "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+       "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+       "uploadDate": "2019-07-05T08:00:00+02:00",
+       "duration": "PT10M06S",
+       "interactionStatistic": [{
+       "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/LikeAction",
+         "userInteractionCount": "45760"
+       }
+       ,{
+       "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/DislikeAction",
+         "userInteractionCount": "416"
+       }
+       ,{
+       "@type": "InteractionCounter",
+       "interactionType": "https://schema.org/WatchAction",
+       "userInteractionCount": "881937"
+       }],
+       "commentCount": "3164"
+     }
+     </script>
+      </textarea>
+ 
+     <h3>HTML Output:</h3>
+ 
+     <textarea rows="10" cols="150">
+      
+       <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+       <head>
+         <title itemprop="name">nerf baby vegeta pls</title>
+       </head>
+       <body>
+         <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+         <meta itemprop="duration" content="PT10M06S" />
+         <p itemprop="description">Video about videogame.</p>
+         <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+           <meta itemprop="userInteractionCount" content="45760" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+           <meta itemprop="userInteractionCount" content="416" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+           <meta itemprop="userInteractionCount" content="881937" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+         </div>
+         <meta itemprop="commentCount" content="3164">
+         <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+         <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+       </body>
+       </html>
+       
+      </textarea>
+
+      <br>
+      <br>  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h2>For "Three Idiots VS Gogeta SSJ4 (STRONGEST BOSS In Dragon Ball FighterZ)"</h2>
+      <br>
+      <br>
+      <h3>JSON-LD Output:</h3>
+      <!-- textarea { white-space: nowrap;<!--> 
+      <textarea rows="10" cols="150">
+       
+       <script type="application/ld+json">
+       {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Three Idiots VS Gogeta SSJ4 (STRONGEST BOSS In Dragon Ball FighterZ)",
+        "description": "Video about videogame.",
+        "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+        "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+        "uploadDate": "2019-07-05T08:00:00+02:00",
+        "duration": "PT10M06S",
+        "interactionStatistic": [{
+        "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/LikeAction",
+          "userInteractionCount": "30932"
+        }
+        ,{
+        "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/DislikeAction",
+          "userInteractionCount": "302"
+        }
+        ,{
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "624549"
+        }],
+        "commentCount": "2123"
+      }
+      </script>
+       </textarea>
+  
+      <h3>HTML Output:</h3>
+  
+      <textarea rows="10" cols="150">
+       
+        <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+        <head>
+          <title itemprop="name">Three Idiots VS Gogeta SSJ4 (STRONGEST BOSS In Dragon Ball FighterZ)</title>
+        </head>
+        <body>
+          <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+          <meta itemprop="duration" content="PT10M06S" />
+          <p itemprop="description">Video about videogame.</p>
+          <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+            <meta itemprop="userInteractionCount" content="30932" />
+            <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+            <meta itemprop="userInteractionCount" content="302" />
+            <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+            <meta itemprop="userInteractionCount" content="624549" />
+            <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+          </div>
+          <meta itemprop="commentCount" content="2123">
+          <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+          <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+        </body>
+        </html>
+        
+       </textarea>
+
+       <br>
+       <br>  
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <h2>For "Three Idiots VS Super Baby Vegeta (MONSTER BOSS In Dragon Ball FighterZ!)"</h2>
+       <br>
+       <br>
+       <h3>JSON-LD Output:</h3>
+       <!-- textarea { white-space: nowrap;<!--> 
+       <textarea rows="10" cols="150">
+        
+        <script type="application/ld+json">
+        {
+         "@context": "https://schema.org",
+         "@type": "VideoObject",
+         "name": "Three Idiots VS Super Baby Vegeta (MONSTER BOSS In Dragon Ball FighterZ!)",
+         "description": "Video about videogame.",
+         "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+         "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+         "uploadDate": "2019-07-05T08:00:00+02:00",
+         "duration": "PT10M06S",
+         "interactionStatistic": [{
+         "@type": "InteractionCounter",
+           "interactionType": "https://schema.org/LikeAction",
+           "userInteractionCount": "30654"
+         }
+         ,{
+         "@type": "InteractionCounter",
+           "interactionType": "https://schema.org/DislikeAction",
+           "userInteractionCount": "264"
+         }
+         ,{
+         "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/WatchAction",
+         "userInteractionCount": "698758"
+         }],
+         "commentCount": "3476"
+       }
+       </script>
+        </textarea>
+   
+       <h3>HTML Output:</h3>
+   
+       <textarea rows="10" cols="150">
+        
+         <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+         <head>
+           <title itemprop="name">Three Idiots VS Super Baby Vegeta (MONSTER BOSS In Dragon Ball FighterZ!)</title>
+         </head>
+         <body>
+           <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+           <meta itemprop="duration" content="PT10M06S" />
+           <p itemprop="description">Video about videogame.</p>
+           <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+             <meta itemprop="userInteractionCount" content="30654" />
+             <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+             <meta itemprop="userInteractionCount" content="264" />
+             <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+             <meta itemprop="userInteractionCount" content="698758" />
+             <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+           </div>
+           <meta itemprop="commentCount" content="3476">
+           <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+           <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+         </body>
+         </html>
+         
+        </textarea>
+
+        <br>
+        <br>  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>For "MOST HILARIOUS RAGE EVER. ðŸ˜‚"</h2>
+        <br>
+        <br>
+        <h3>JSON-LD Output:</h3>
+        <!-- textarea { white-space: nowrap;<!--> 
+        <textarea rows="10" cols="150">
+         
+         <script type="application/ld+json">
+         {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "MOST HILARIOUS RAGE EVER. ðŸ˜‚",
+          "description": "Video about gameplay reaction.",
+          "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+          "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+          "uploadDate": "2019-07-05T08:00:00+02:00",
+          "duration": "PT10M06S",
+          "interactionStatistic": [{
+          "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/LikeAction",
+            "userInteractionCount": "93858"
+          }
+          ,{
+          "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/DislikeAction",
+            "userInteractionCount": "3414"
+          }
+          ,{
+          "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/WatchAction",
+          "userInteractionCount": "5493998"
+          }],
+          "commentCount": "13240"
+        }
+        </script>
+         </textarea>
+    
+        <h3>HTML Output:</h3>
+    
+        <textarea rows="10" cols="150">
+         
+          <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+          <head>
+            <title itemprop="name">MOST HILARIOUS RAGE EVER. ðŸ˜‚</title>
+          </head>
+          <body>
+            <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+            <meta itemprop="duration" content="PT10M06S" />
+            <p itemprop="description">Video about gameplay reaction.</p>
+            <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+              <meta itemprop="userInteractionCount" content="93858" />
+              <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+              <meta itemprop="userInteractionCount" content="3414" />
+              <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+              <meta itemprop="userInteractionCount" content="5493998" />
+              <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+            </div>
+            <meta itemprop="commentCount" content="13240">
+            <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+            <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+          </body>
+          </html>
+          
+         </textarea>
+
+         <br>
+         <br>  
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+    <h2>For "HOW is he Putting Up a Fight!? | Dragon Ball FighterZ"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "HOW is he Putting Up a Fight!? | Dragon Ball FighterZ",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "5597"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "35"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "45530"
+      }],
+      "commentCount": "368"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">HOW is he Putting Up a Fight!? | Dragon Ball FighterZ</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="5597" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="35" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="45530" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="368">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "When Three Idiots Attempt THE FINAL BOSS BATTLE In Dragonball FighterZ...."</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "When Three Idiots Attempt THE FINAL BOSS BATTLE In Dragonball FighterZ....",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "23941"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "133"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "445308"
+      }],
+      "commentCount": "1539"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">When Three Idiots Attempt THE FINAL BOSS BATTLE In Dragonball FighterZ....</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="23941" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="133" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="445308" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="1539">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "When Three Idiots Attempt THE HARDEST BOSS BATTLE In Dragonball FighterZ..."</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "When Three Idiots Attempt THE HARDEST BOSS BATTLE In Dragonball FighterZ...",
+      "description": "Video about videogame.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "79879"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "898"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "2301143"
+      }],
+      "commentCount": "2149"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">When Three Idiots Attempt THE HARDEST BOSS BATTLE In Dragonball FighterZ...</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about videogame.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="79879" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="898" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="2301143" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="2149">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "Memes that have the power of God and Anime on their side"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Memes that have the power of God and Anime on their side",
+      "description": "Video about animation.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "5623"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "137"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "162793"
+      }],
+      "commentCount": "810"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">Memes that have the power of God and Anime on their side</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about animation.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="5623" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="137" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="162793" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="810">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "memes that are actually funny"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "memes that are actually funny",
+      "description": "Video about memes.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "195949"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "7322"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "6292544"
+      }],
+      "commentCount": "8359"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">memes that are actually funny</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about memes.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="195949" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="7322" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="6292544" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="8359">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+    <h2>For "iconic vines that changed the world"</h2>
+    <br>
+    <br>
+    <h3>JSON-LD Output:</h3>
+    <!-- textarea { white-space: nowrap;<!--> 
+    <textarea rows="10" cols="150">
+     
+     <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "iconic vines that changed the world",
+      "description": "Video about vines.",
+      "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+      "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+      "uploadDate": "2019-07-05T08:00:00+02:00",
+      "duration": "PT10M06S",
+      "interactionStatistic": [{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": "581645"
+      }
+      ,{
+      "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/DislikeAction",
+        "userInteractionCount": "29449"
+      }
+      ,{
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "26966888"
+      }],
+      "commentCount": "26872"
+    }
+    </script>
+     </textarea>
+
+    <h3>HTML Output:</h3>
+
+    <textarea rows="10" cols="150">
+     
+      <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+      <head>
+        <title itemprop="name">iconic vines that changed the world</title>
+      </head>
+      <body>
+        <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+        <meta itemprop="duration" content="PT10M06S" />
+        <p itemprop="description">Video about vines.</p>
+        <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+          <meta itemprop="userInteractionCount" content="581645" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="29449" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+          <meta itemprop="userInteractionCount" content="26966888" />
+          <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+        </div>
+        <meta itemprop="commentCount" content="26872">
+        <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+        <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+      </body>
+      </html>
+      
+     </textarea>
+
+     <br>
+     <br>  
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <h2>For "Funny Vines March 2021 (Part 1) TBT Clean Vine"</h2>
+     <br>
+     <br>
+     <h3>JSON-LD Output:</h3>
+     <!-- textarea { white-space: nowrap;<!--> 
+     <textarea rows="10" cols="150">
+      
+      <script type="application/ld+json">
+      {
+       "@context": "https://schema.org",
+       "@type": "VideoObject",
+       "name": "Funny Vines March 2021 (Part 1) TBT Clean Vine",
+       "description": "Video about vines.",
+       "thumbnailUrl": "http://www.example.com/thumbnail.jpg",
+       "contentUrl": "https://youtu.be/fJGxc0x7hzA",
+       "uploadDate": "2019-07-05T08:00:00+02:00",
+       "duration": "PT10M06S",
+       "interactionStatistic": [{
+       "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/LikeAction",
+         "userInteractionCount": "6136"
+       }
+       ,{
+       "@type": "InteractionCounter",
+         "interactionType": "https://schema.org/DislikeAction",
+         "userInteractionCount": "143"
+       }
+       ,{
+       "@type": "InteractionCounter",
+       "interactionType": "https://schema.org/WatchAction",
+       "userInteractionCount": "373128"
+       }],
+       "commentCount": "276"
+     }
+     </script>
+      </textarea>
+ 
+     <h3>HTML Output:</h3>
+ 
+     <textarea rows="10" cols="150">
+      
+       <html itemscope itemprop="VideoObject" itemtype="https://schema.org/VideoObject">
+       <head>
+         <title itemprop="name">Funny Vines March 2021 (Part 1) TBT Clean Vine</title>
+       </head>
+       <body>
+         <meta itemprop="uploadDate" content="2019-07-05T08:00:00+02:00" />
+         <meta itemprop="duration" content="PT10M06S" />
+         <p itemprop="description">Video about vines.</p>
+         <div itemprop="interactionStatistic" itemtype="http://schema.org/InteractionCounter" itemscope>
+           <meta itemprop="userInteractionCount" content="6136" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/LikeAction" itemscope />
+           <meta itemprop="userInteractionCount" content="143" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/DislikeAction" itemscope />
+           <meta itemprop="userInteractionCount" content="373128" />
+           <meta itemprop="interactionType" itemtype="https://schema.org/WatchAction" itemscope />   
+         </div>
+         <meta itemprop="commentCount" content="276">
+         <meta itemprop="contentUrl" content="https://youtu.be/fJGxc0x7hzA" />
+         <meta itemprop="thumbnailUrl" content="https://example.com/photos/1x1/photo.jpg" />
+       </body>
+       </html>
+       
+      </textarea> 
+    
+    </p>
+  </main>
+
+
+
+  <footer class="mt-auto text-white-50" id="foot">
+    <p>A Cardiff University Project, presented by <br>Dafydd Thomas, David Diaz Clifton, John Baker, Jose Adrian Padilla Hernaiz and Vidhi Chaudhary  </p>
+  </footer>
+
+</div>
+
+</body></html>

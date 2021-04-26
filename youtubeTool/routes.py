@@ -30,6 +30,10 @@ def recco():
 def info():
     return(render_template('info.html'))
 
+@app.route("/allVideos", methods=['POST','GET'])
+def machineReadable():
+    return(render_template('allVideos.html'))
+
 @app.route("/results", methods=['POST', 'GET'])
 def results():
     if request.method == "GET":
