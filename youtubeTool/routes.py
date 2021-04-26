@@ -69,7 +69,7 @@ def get_video_info(video_link):
     videoID = video_category_info['items'][0]['snippet']['categoryId']
     Title = video_category_info['items'][0]['snippet']['title']
 
-    data = [Title, viewCount, likeCount, dislikeCount, commentCount, videoID]
+    data = [viewCount, likeCount, dislikeCount, commentCount, videoID, Title]
 
     return(data)
 
@@ -77,27 +77,10 @@ def get_video_info(video_link):
 def machineLearning_function(data):
     video_dataset = loadCsv()
 
-    iconic_vines = [26966888, 581645, 29449, 26872, 24, "iconic vines that changed the world"]
-    Funny_Vines_March = [373128, 6136, 143, 276, 24, "Funny Vines March 2021 (Part 1) TBT Clean Vine"]
-    Memes_that_have_power = [162793, 5623, 137, 810, 23, "Memes that have the power of God and Anime on their side"]
-    funny_memes = [6292544, 195949, 7322, 8359, 23, "memes that are actually funny"]
 
-    x = (14380, 1378, 28, 351, 27, "FULL SPEED rc car assault!")
-
-
-    y = (4314097,206833,2920,21901,20, "Game Theory: Are Your Mobile Games ILLEGAL?")
-
-    z = (85779788,5813891,203253,633053,24, "THE RUBY PLAYBUTTON / YouTube 50 Mil Sub Reward Unbox")
-
-    A = (78336220,220144,49261,489,27, "StoryBots Outer Space | Planets, Sun, Moon, Earth and Stars | Solar System Super Song | Fun Learning")
     B = (26966888,581645,29449,26872,24, "iconic vines that changed the world")
 
-
-    #print(get_neighbors(x, video_dataset, 20))
-    #print(get_neighbors(y, video_dataset, 20))
-    #print(get_neighbors(z, video_dataset, 20))
-    #print(get_neighbors(A, video_dataset, 20))
-    machine_learning_data = (get_neighbors(B, video_dataset, 5))
+    machine_learning_data = (get_neighbors(data, video_dataset, 20))
 
     return(machine_learning_data)
 
@@ -125,7 +108,7 @@ def euclidean_distance(pt1, pt2):
     difference = 0
 
     for i in range(len(pt1) - 1):
-        difference = difference + (pt1[i] - pt2[i]) ** 2
+        difference = difference + (int(pt1[i]) - int(pt2[i])) ** 2
         distance = difference ** 0.5
 
     return distance

@@ -66,9 +66,11 @@
 
     <h1>Youtube Recommender</h1>
     <h2>Your Results are in!</h2>
-    <p class="lead"> Below you'll find a playlist selected by our powerful machine learning process. <br> Below is an exemplar playlist for the time being...</p>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLpC1Yw_g-KEUXWWVoLpzTZjKjaSLPwAHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {%for a in results%}
+      <p> {{a}} </p>
+
+    {%endfor%}
 
   </main>
 
