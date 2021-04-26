@@ -68,7 +68,8 @@
     <h2>Your Results are in!</h2>
 
     {%for a in results%}
-      <p> {{a}} </p>
+      <p> {{a[0]}} </p>
+      <a href={{a[1]}}>Click here to go to the video</a>
 
     {%endfor%}
 

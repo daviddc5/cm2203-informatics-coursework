@@ -107,7 +107,7 @@ def loadCsv():
 def euclidean_distance(pt1, pt2):
     difference = 0
 
-    for i in range(len(pt1) - 1):
+    for i in range(4):
         difference = difference + (int(pt1[i]) - int(pt2[i])) ** 2
         distance = difference ** 0.5
 
@@ -145,7 +145,7 @@ def normalize_distances(a_list_of_distances):
         #print(minimum[0], maximum[0])
 
         new_value = (value[0] - minimum[0]) / (maximum[0] - minimum[0])
-        normalized_list.append([new_value, value[1]])
+        normalized_list.append([new_value, value[1], value[2]])
         #print(normalized_list)
     return normalized_list
 
@@ -166,7 +166,7 @@ def get_neighbors(video_input, dataset, k):
         #print(video_info)
         #print(final_distance)
 
-        distances.append([final_distance, title[5]])
+        distances.append([final_distance, title[5], title[7]])
         #print(distances)
 
     normalized = normalize_distances(distances)
@@ -181,7 +181,7 @@ def get_neighbors(video_input, dataset, k):
 
     for i in range(0, len(neighbors)):
         #KNN.append(neighbors[i])
-        KNN.append(neighbors[i][1])
+        KNN.append([neighbors[i][1], neighbors[i][2]])
 
     return KNN
 
