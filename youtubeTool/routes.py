@@ -1,6 +1,10 @@
 from flask import Flask, render_template, url_for, request, redirect
 from youtubeTool import app
 from googleapiclient.discovery import build
+import csv
+import pandas
+# use panda, numpy, scipy, mirar operator
+# columnas title, like count, comment count, views
 
 youtube_API_KEY = "AIzaSyD8E1MLYfX4cNw379bjjHBxQUy3TrbOYro"
 
@@ -30,7 +34,8 @@ def info():
 def results():
     if request.method == "GET":
         link = request.args['link']
-        results = get_video_info(link)
+        video_data = get_video_info(link)
+        results = machineLearning_function(video_data)
         return render_template("results.html", title='Results', results=results)
     else:
         return render_template('home.html')
@@ -67,3 +72,137 @@ def get_video_info(video_link):
     data = [Title, viewCount, likeCount, dislikeCount, commentCount, videoID]
 
     return(data)
+
+
+def machineLearning_function(data):
+    video_dataset = loadCsv()
+
+    iconic_vines = [26966888, 581645, 29449, 26872, 24, "iconic vines that changed the world"]
+    Funny_Vines_March = [373128, 6136, 143, 276, 24, "Funny Vines March 2021 (Part 1) TBT Clean Vine"]
+    Memes_that_have_power = [162793, 5623, 137, 810, 23, "Memes that have the power of God and Anime on their side"]
+    funny_memes = [6292544, 195949, 7322, 8359, 23, "memes that are actually funny"]
+
+    x = (14380, 1378, 28, 351, 27, "FULL SPEED rc car assault!")
+
+
+    y = (4314097,206833,2920,21901,20, "Game Theory: Are Your Mobile Games ILLEGAL?")
+
+    z = (85779788,5813891,203253,633053,24, "THE RUBY PLAYBUTTON / YouTube 50 Mil Sub Reward Unbox")
+
+    A = (78336220,220144,49261,489,27, "StoryBots Outer Space | Planets, Sun, Moon, Earth and Stars | Solar System Super Song | Fun Learning")
+    B = (26966888,581645,29449,26872,24, "iconic vines that changed the world")
+
+
+    #print(get_neighbors(x, video_dataset, 20))
+    #print(get_neighbors(y, video_dataset, 20))
+    #print(get_neighbors(z, video_dataset, 20))
+    #print(get_neighbors(A, video_dataset, 20))
+    machine_learning_data = (get_neighbors(B, video_dataset, 5))
+
+    return(machine_learning_data)
+
+
+def loadCsv():
+    lines = csv.reader(open(r'machineLearningImproved.csv'))
+    dataset = list(lines)
+
+    for i in range(0, len(dataset)):
+        (dataset[i][0]) = int(dataset[i][0])
+        (dataset[i][1]) = int(dataset[i][1])
+
+        (dataset[i][2]) = int(dataset[i][2])
+        (dataset[i][3]) = int(dataset[i][3])
+        (dataset[i][4]) = int(dataset[i][4])
+
+        # dataset[i][0] = int(dataset[i][j])
+        # print(type(dataset[i][j]))
+    return dataset
+
+
+
+# using euclidean distance to calculate distance between two points
+def euclidean_distance(pt1, pt2):
+    difference = 0
+
+    for i in range(len(pt1) - 1):
+        difference = difference + (pt1[i] - pt2[i]) ** 2
+        distance = difference ** 0.5
+
+    return distance
+
+
+"""
+print("The euclidean distance between video " + iconic_vines[5] + " and video " + Funny_Vines_March[5] + " is ")
+print(euclidean_distance(iconic_vines, Funny_Vines_March))
+print(euclidean_distance(iconic_vines, Memes_that_have_power))
+print(euclidean_distance(iconic_vines, funny_memes))
+print(euclidean_distance(Funny_Vines_March, Memes_that_have_power))
+print(euclidean_distance(Funny_Vines_March, funny_memes))
+print(euclidean_distance(Memes_that_have_power, funny_memes))
+
+"""
+# here we should have a list of all the hypotetical distances
+#distances_list = [26600015.934873667, 26810312.35429192, 20677961.542909663, 210336.3035403066, 5922468.372980644, 6132713.911467173]
+
+
+# A function that normalizes the results so that the data is more usable and appropriate scale
+# takes values for videos list and returns them normalized
+
+def normalize_distances(a_list_of_distances):
+    #print("title to append is")
+    #print(a_list_of_distances)
+
+    maximum = max(a_list_of_distances)
+    minimum = min(a_list_of_distances)
+    normalized_list = []
+    for value in a_list_of_distances:
+
+        #print(value[1])
+        #print("minimum and maximum")
+        #print(minimum[0], maximum[0])
+
+        new_value = (value[0] - minimum[0]) / (maximum[0] - minimum[0])
+        normalized_list.append([new_value, value[1]])
+        #print(normalized_list)
+    return normalized_list
+
+
+# This function returns k number of closest neighbors
+def get_neighbors(video_input, dataset, k):
+    # new distances
+    distances = []
+    for title in dataset:
+        video_info = title
+
+        #print("dataset is")
+        #print(dataset)
+
+        final_distance = euclidean_distance(video_info, video_input)
+
+        #print("final distance between given video and dataset is ")
+        #print(video_info)
+        #print(final_distance)
+
+        distances.append([final_distance, title[5]])
+        #print(distances)
+
+    normalized = normalize_distances(distances)
+    normalized.sort(reverse=True)
+    #print(normalized)
+
+    #print(x)
+
+    neighbors = normalized[0:k]
+    KNN = []
+    i = 0
+
+    for i in range(0, len(neighbors)):
+        #KNN.append(neighbors[i])
+        KNN.append(neighbors[i][1])
+
+    return KNN
+
+
+#sample of a video that would be tested against
+#iconic_vines_2 = (26966888, 581645, 29449, 26872, 24, "iconic vines that changed the world 2")
+#testing different results
