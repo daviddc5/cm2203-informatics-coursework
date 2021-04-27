@@ -43,7 +43,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
   </head>
-
+  <div class="container">
   <body class="d-flex h-100 text-center text-white bg-dark">
   {% block content %}
     <form method="POST">
@@ -75,13 +75,12 @@
     <p class="lead">
       <button type="submit" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Go!</button>
     </p>
-  </main>
-
+  </div>
   <footer class="mt-auto text-white-50" id="foot">
     <p>A Cardiff University Project, presented by <br>Dafydd Thomas, David Diaz Clinton, John Baker, Jose Hernaiz and Vidhi Chaudhary  </p>
   </footer>
 
-</div>
+
 
 
 
