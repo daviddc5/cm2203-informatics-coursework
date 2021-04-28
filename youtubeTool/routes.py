@@ -85,7 +85,7 @@ def machineLearning_function(data):#function to statrt the machine learning aspe
     video_dataset = loadCsv()
 
 
-    machine_learning_data = (get_k_neighbors(data, video_dataset, 20))
+    machine_learning_data = (get_k_neighbors(data, video_dataset, 10))
 
     return(machine_learning_data)
 
