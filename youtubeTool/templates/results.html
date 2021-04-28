@@ -43,6 +43,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
   </head>
+  <div class="container">
   <body class="d-flex h-100 text-center text-white bg-dark">
     {% block content %}
       <form method="GET">
@@ -75,7 +76,7 @@
     {%endfor%}
 
   </main>
-
+</div>
   <footer class="mt-auto text-white-50" id="foot">
     <p>A Cardiff University Project, presented by <br>Dafydd Thomas, David Diaz Clifton, John Baker, Jose Adrian Padilla Hernaiz and Vidhi Chaudhary  </p>
   </footer>
