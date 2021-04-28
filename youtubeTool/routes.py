@@ -82,14 +82,13 @@ def machineLearning_function(data):
     video_dataset = loadCsv()
 
 
-    B = (26966888,581645,29449,26872,24, "iconic vines that changed the world")
-
-    machine_learning_data = (get_neighbors(data, video_dataset, 20))
+    machine_learning_data = (get_k_neighbors(data, video_dataset, 20))
 
     return(machine_learning_data)
 
 
 def loadCsv():
+    # loads csv and reads it into an int array
     lines = csv.reader(open(r'machineLearningImproved.csv'))
     dataset = list(lines)
 
@@ -101,16 +100,19 @@ def loadCsv():
         (dataset[i][3]) = int(dataset[i][3])
         (dataset[i][4]) = int(dataset[i][4])
 
-        # dataset[i][0] = int(dataset[i][j])
-        # print(type(dataset[i][j]))
     return dataset
 
 
+video_dataset = loadCsv()
 
-# using euclidean distance to calculate distance between two points
+
+# using euclidean distance to calculate distance between two points, the points being the given video by the user and
+# a video from the dataset.
+
 def euclidean_distance(pt1, pt2):
     difference = 0
-
+    # to calculate the distances between the points we calculate euclidean distance,
+    # by squaring and rooting all the given parameters of that point
     for i in range(4):
         difference = difference + (int(pt1[i]) - int(pt2[i])) ** 2
         distance = difference ** 0.5
@@ -118,78 +120,42 @@ def euclidean_distance(pt1, pt2):
     return distance
 
 
-"""
-print("The euclidean distance between video " + iconic_vines[5] + " and video " + Funny_Vines_March[5] + " is ")
-print(euclidean_distance(iconic_vines, Funny_Vines_March))
-print(euclidean_distance(iconic_vines, Memes_that_have_power))
-print(euclidean_distance(iconic_vines, funny_memes))
-print(euclidean_distance(Funny_Vines_March, Memes_that_have_power))
-print(euclidean_distance(Funny_Vines_March, funny_memes))
-print(euclidean_distance(Memes_that_have_power, funny_memes))
-
-"""
-# here we should have a list of all the hypotetical distances
-#distances_list = [26600015.934873667, 26810312.35429192, 20677961.542909663, 210336.3035403066, 5922468.372980644, 6132713.911467173]
-
-
-# A function that normalizes the results so that the data is more usable and appropriate scale
-# takes values for videos list and returns them normalized
+# this function takes max and minimum values normalized the distances and then do the value minus the minimum and
+# max minus min the new normalizes distances and titles are appended.
 
 def normalize_distances(a_list_of_distances):
-    #print("title to append is")
-    #print(a_list_of_distances)
-
     maximum = max(a_list_of_distances)
     minimum = min(a_list_of_distances)
     normalized_list = []
     for value in a_list_of_distances:
-
-        #print(value[1])
-        #print("minimum and maximum")
-        #print(minimum[0], maximum[0])
-
         new_value = (value[0] - minimum[0]) / (maximum[0] - minimum[0])
         normalized_list.append([new_value, value[1], value[2]])
-        #print(normalized_list)
+
     return normalized_list
 
 
-# This function returns k number of closest neighbors
-def get_neighbors(video_input, dataset, k):
+def get_k_neighbors(video_input, dataset, k):
     # new distances
     distances = []
-    for title in dataset:
-        video_info = title
-
-        #print("dataset is")
-        #print(dataset)
-
+    # loops through all the videos
+    for video_info in dataset:
+        # applies euclidean distance function
         final_distance = euclidean_distance(video_info, video_input)
-
-        #print("final distance between given video and dataset is ")
-        #print(video_info)
-        #print(final_distance)
-
-        distances.append([final_distance, title[5], title[7]])
-        #print(distances)
-
+        # appends this and title
+        distances.append([final_distance, video_info[5], video_info[7]])
+    # applies normalization
     normalized = normalize_distances(distances)
-    normalized.sort(reverse=True)
-    #print(normalized)
-
-    #print(x)
-
+    # use sorting in reverse to get closest neigbors(distances)
+    normalized.sort()
+    # assigns first K
     neighbors = normalized[0:k]
     KNN = []
+    # add to KNN and returns
     i = 0
-
     for i in range(0, len(neighbors)):
-        #KNN.append(neighbors[i])
+        # KNN.append(neighbors[i])
         KNN.append([neighbors[i][1], neighbors[i][2]])
 
     return KNN
 
 
-#sample of a video that would be tested against
-#iconic_vines_2 = (26966888, 581645, 29449, 26872, 24, "iconic vines that changed the world 2")
-#testing different results
