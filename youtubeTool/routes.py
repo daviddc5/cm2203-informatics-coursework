@@ -2,8 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 from youtubeTool import app
 from googleapiclient.discovery import build
 import csv
-import pandas
-# use panda, numpy, scipy, mirar operator
+# use numpy, scipy, mirar operator
 # columnas title, like count, comment count, views
 
 youtube_API_KEY = "AIzaSyD8E1MLYfX4cNw379bjjHBxQUy3TrbOYro"
