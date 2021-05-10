@@ -21,8 +21,10 @@ if __name__ == '__main__':
 @app.route("/recco",methods=['POST','GET'])#recommendation page code
 def recco():
     if request.method == "POST":
-        video_url = request.form['search_videoLink']
+        video_url = request.form['search_videoLink']#video link
+
         return redirect(url_for('results', link = video_url))
+        #Veh = Vehicles, Edu = Education, Ent = Entertainment, Ani = Animation, Gam = Gaming, How = HowToStyle, Peo = PeopleBlogs, Sci = ScienceTechnology, L1 = L1, L2 = L2, L3 = L3, L4 = L4, R1 = R1, R2 = R2, R3 = R3, R4 = R4))
     else:
         return(render_template('recco.html'))
 
@@ -132,7 +134,7 @@ def normalize_distances(a_list_of_distances):
     normalized_list = []
     for value in a_list_of_distances:
         new_value = (value[0] - minimum[0]) / (maximum[0] - minimum[0])
-        normalized_list.append([new_value, value[1], value[2]])
+        normalized_list.append([new_value, value[1], value[2], value[3], value[4], value[5]])
 
     return normalized_list
 
@@ -145,7 +147,7 @@ def get_k_neighbors(video_input, dataset, k):
         # applies euclidean distance function
         final_distance = euclidean_distance(video_info, video_input)
         # appends this and title
-        distances.append([final_distance, video_info[5], video_info[7]])
+        distances.append([final_distance, video_info[5], video_info[6],video_info[7], video_info[0], video_info[1]])
     # applies normalization
     normalized = normalize_distances(distances)
     # use sorting in reverse to get closest neigbors(distances)
@@ -157,6 +159,6 @@ def get_k_neighbors(video_input, dataset, k):
     i = 0
     for i in range(0, len(neighbors)):
         # KNN.append(neighbors[i])
-        KNN.append([neighbors[i][1], neighbors[i][2]])
+        KNN.append([neighbors[i][1], neighbors[i][2], neighbors[i][3], neighbors[i][4], neighbors[i][5]])
 
     return KNN

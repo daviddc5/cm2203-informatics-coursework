@@ -72,8 +72,11 @@
     <!-- This for loop outputs all of the results from the suggestion part of the system along with a url-->
     {%for a in results%}
       <p> {{a[0]}} </p>
-      <a href={{a[1]}}>Click here to go to the video</a>
+      <a href={{a[2]}}>Click here to go to the video</a>
       <!--This URL can be clicked on and sends the user directly to the video they want to watch-->
+      <p> CV info: </p>
+      <p> Category: {{a[1]}}, View count: {{a[3]}}, Like count: {{a[4]}}</p>
+      <p> </p>
     {%endfor%}
 
   </main>
@@ -83,8 +86,6 @@
   </footer>
 
 </div>
-
-
 
 
 </form>
